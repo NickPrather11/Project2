@@ -2,8 +2,13 @@
   "development": {
     "username": "root",
     "password": null,
-    "database": "dreamjournal_db",
+    "database": "dreamjournalx_db",
     "host": "localhost",
+    "dialect": "mysql"
+  },
+  "production": {
+    "use_env_variable": "mysql://a5gov8ywq7ow7oux:f1wq16o5v848s7cj@d6ybckq58s9ru745.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/g7gvl71unpwoe72h",
+    "database": "g7gvl71unpwoe72h",
     "dialect": "mysql"
   }
 }
