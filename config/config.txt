@@ -9,7 +9,6 @@ the following is a copy of the original config.json after editing to comment the
     "database": "dreamjournal_db",
     "host": "localhost",
     "dialect": "mysql"
-  //// these are disabled until we need them
   },
      "test": {
        "username": "root",
@@ -21,6 +20,6 @@ the following is a copy of the original config.json after editing to comment the
      },
      "production": {
        "use_env_variable": "JAWSDB_URL",
-       "dialect": "mysql"
+  
   }
 }

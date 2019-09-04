@@ -1,8 +1,9 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  //var favicon = require("serve-favicon");
-  //app.use(favicon(__dirname + "/favicon.ico"));
+  var favicon = require("serve-favicon");
+  console.log("favicon location: " + __dirname + "\\favicon.ico");
+  app.use(favicon(__dirname + "\\favicon.ico"));
 
   // Load index page
   app.get("/", function(req, res) {
