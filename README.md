@@ -8,5 +8,7 @@ Users can create an entry with associated "tags" or categories and browse entrie
 
 ** NOTE **
 For now, the login functions are inoperable. Just click outside the login modal to make it disappear.
+Also, all the associations work locally, but for some reason they aren't showing on the heroku app.
+Debugging currently in progress!
 
 Heroku deployment: https://cryptic-badlands-56041.herokuapp.com/
