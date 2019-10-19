@@ -31,6 +31,8 @@ var API = {
   }
 };
 
+//Why is this necessary?
+
 // refreshJournals gets new journals from the db and repopulates the list
 var refreshJournals = function() {
   API.getJournals().then(function(data) {
@@ -97,12 +99,11 @@ var handleFormSubmit = function(event) {
 // handleDeleteBtnClick is called when an journal's delete button is clicked
 // Remove the journal from the db and refresh the list
 var handleDeleteBtnClick = function() {
-  var idToDelete = $(this)
-    .parent()
-    .attr("data-id");
-  API.deleteJournal(idToDelete).then(function() {
-    refreshJournals();
-  });
+  console.log("id to delete: " + this.attr("data-id"));
+  // var idToDelete = $(this).attr("data-id");
+  // API.deleteJournal(idToDelete).then(function() {
+  //   refreshJournals();
+  // });
 };
 
 // Add event listeners to the submit and delete buttons
