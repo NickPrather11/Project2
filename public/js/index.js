@@ -28,7 +28,7 @@ var API = {
       url: "api/journals/" + id,
       type: "DELETE"
     });
-    // This needs to delete associated tags as well
+    // Maybe this should delete tags as well if there are no more entries on that tag?
   }
 };
 
@@ -106,7 +106,7 @@ var handleDeleteBtnClick = function() {
   API.deleteJournal(idToDelete).then(function() {
     refreshJournals();
   });
-  // Function for deleting associated tags needs to be added to API.deleteJournal
+  // Should this delete tags if there are no more entries for that tag?
   // refreshJournals is not currently happening automatically
 };
 
