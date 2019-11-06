@@ -28,12 +28,14 @@ var API = {
       url: "api/journals/" + id,
       type: "DELETE"
     });
+    // This needs to delete associated tags as well
   }
 };
 
 //Why is this necessary?
 
 // refreshJournals gets new journals from the db and repopulates the list
+// This needs to trigger a page refresh as well
 var refreshJournals = function() {
   API.getJournals().then(function(data) {
     var $journals = data.map(function(journal) {
@@ -99,11 +101,13 @@ var handleFormSubmit = function(event) {
 // handleDeleteBtnClick is called when an journal's delete button is clicked
 // Remove the journal from the db and refresh the list
 var handleDeleteBtnClick = function() {
-  console.log("id to delete: " + this.attr("data-id"));
-  // var idToDelete = $(this).attr("data-id");
-  // API.deleteJournal(idToDelete).then(function() {
-  //   refreshJournals();
-  // });
+  console.log("id to delete: " + $(this).attr("data-id"));
+  var idToDelete = $(this).attr("data-id");
+  API.deleteJournal(idToDelete).then(function() {
+    refreshJournals();
+  });
+  // Function for deleting associated tags needs to be added to API.deleteJournal
+  // refreshJournals is not currently happening automatically
 };
 
 // Add event listeners to the submit and delete buttons
